@@ -6,14 +6,14 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const IndexPage = () => {
-  let [count, setCount] = React.useState(0);
+  let [timestamp, setTimestamp] = React.useState();
 
   React.useEffect(() => {
-    console.log(count);
+    console.log(timestamp);
   });
 
   React.useEffect(() => {
-    setCount(1);
+    setTimestamp(Date.now());
   }, []);
 
   return <Layout>
