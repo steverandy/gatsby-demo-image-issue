@@ -5,8 +5,18 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = () => {
+  let [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    console.log(count);
+  });
+
+  React.useEffect(() => {
+    setCount(1);
+  }, []);
+
+  return <Layout>
     <Seo title="Home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -24,6 +34,6 @@ const IndexPage = () => (
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
     </p>
   </Layout>
-)
+}
 
 export default IndexPage
